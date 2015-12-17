@@ -3,10 +3,10 @@ MSImagePickerController
 A subclass of UIImagePickerController that support multi select. (一个支持多选的UIImagePickerController的子类)
 
 ## Example
-![Screenshots_Row1](https://github.com/Jameson-zxm/MSImagePickerController/demo.git)
+<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/demo.gif" width="376" height="661" />
 
 ## How it works
-![Screenshots_Row1](https://github.com/Jameson-zxm/MSImagePickerController/howitworks.png)
+<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/howitworks.png" width="829" height="661" />
 
 ## Installation
 
@@ -43,6 +43,7 @@ Conform to delegate.
 }
 
 - (void)imagePickerControllerOverMaxCount:(MSImagePickerController *)picker {
+    NSLog(@"over max count");
 }
 ```
 
