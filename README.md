@@ -3,14 +3,13 @@ MSImagePickerController
 A subclass of UIImagePickerController that support multi select. (一个支持多选的UIImagePickerController的子类)
 
 ## Example
-<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/demo.gif" width="376" height="661" />
+<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/demo.gif" width="315" height="565" />
 
 ## How it works
-<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/howitworks.png" width="829" height="661" />
+<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/howitworks.png" width="580" height="463" />
 
 ## Installation
 
-Available in [Cocoa Pods](http://cocoapods.org/?q=MSImagePickerController)
 ```ruby
 pod 'MSImagePickerController', :git => 'https://github.com/Jameson-zxm/MSImagePickerController.git'
 ```
@@ -39,13 +38,16 @@ Conform to delegate.
 }
 
 - (void)imagePickerControllerdidFinish:(MSImagePickerController *)picker {
-    NSLog(@"do finish");
+    NSLog(@"%@", picker.images);
 }
 
 - (void)imagePickerControllerOverMaxCount:(MSImagePickerController *)picker {
-    NSLog(@"over max count");
+    NSLog(@"over max count:%ld", picker.maxImageCount);
 }
 ```
+
+## Contact me
+mail: morenotepad@163.com
 
 ## License
 (The MIT License)
