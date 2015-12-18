@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform      = :ios, '7.0'
   s.source        = { :git => "https://github.com/Jameson-zxm/MSImagePickerController", :tag => "v#{s.version}" }
   s.source_files  = 'MSImagePickerController', 'MSImagePickerController/**/*.{h,m}'
-  s.resources     = "UIImagePickerController/Resources/UIImagePickerController.bundle"
+  s.resources     = "MSImagePickerController/Resources/MSImagePickerController.bundle"
   s.requires_arc  = true
   s.framework     = "UIKit"
 end
