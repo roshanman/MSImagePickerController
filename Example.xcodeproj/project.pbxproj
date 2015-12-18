@@ -15,7 +15,7 @@
 		8E0202101C22458200F1B071 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E02020E1C22458200F1B071 /* LaunchScreen.xib */; };
 		8E0202281C2245EB00F1B071 /* MSImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0202271C2245EB00F1B071 /* MSImagePickerController.m */; };
 		8E02022A1C2245F300F1B071 /* MSImagePickerController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8E0202291C2245F300F1B071 /* MSImagePickerController.podspec */; };
-		8E02022C1C2246B400F1B071 /* AssetsPickerChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E02022B1C2246B400F1B071 /* AssetsPickerChecked@2x.png */; };
+		8EBB445E1C239B2300E67A52 /* MSImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8EBB445D1C239B2300E67A52 /* MSImagePickerController.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		8E0202261C2245EB00F1B071 /* MSImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSImagePickerController.h; sourceTree = "<group>"; };
 		8E0202271C2245EB00F1B071 /* MSImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSImagePickerController.m; sourceTree = "<group>"; };
 		8E0202291C2245F300F1B071 /* MSImagePickerController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MSImagePickerController.podspec; sourceTree = "<group>"; };
-		8E02022B1C2246B400F1B071 /* AssetsPickerChecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AssetsPickerChecked@2x.png"; sourceTree = "<group>"; };
+		8EBB445D1C239B2300E67A52 /* MSImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MSImagePickerController.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,6 @@
 		8E0201FE1C22458200F1B071 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				8E02022B1C2246B400F1B071 /* AssetsPickerChecked@2x.png */,
 				8E0202031C22458200F1B071 /* AppDelegate.h */,
 				8E0202041C22458200F1B071 /* AppDelegate.m */,
 				8E0202061C22458200F1B071 /* ViewController.h */,
@@ -94,8 +93,17 @@
 			children = (
 				8E0202261C2245EB00F1B071 /* MSImagePickerController.h */,
 				8E0202271C2245EB00F1B071 /* MSImagePickerController.m */,
+				8EBB445C1C239B2300E67A52 /* Resources */,
 			);
 			path = MSImagePickerController;
+			sourceTree = "<group>";
+		};
+		8EBB445C1C239B2300E67A52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8EBB445D1C239B2300E67A52 /* MSImagePickerController.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +165,7 @@
 			files = (
 				8E02022A1C2245F300F1B071 /* MSImagePickerController.podspec in Resources */,
 				8E02020B1C22458200F1B071 /* Main.storyboard in Resources */,
-				8E02022C1C2246B400F1B071 /* AssetsPickerChecked@2x.png in Resources */,
+				8EBB445E1C239B2300E67A52 /* MSImagePickerController.bundle in Resources */,
 				8E0202101C22458200F1B071 /* LaunchScreen.xib in Resources */,
 				8E02020D1C22458200F1B071 /* Images.xcassets in Resources */,
 			);

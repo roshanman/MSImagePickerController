@@ -163,7 +163,7 @@ static char attachSelfKey;
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.layer.cornerRadius = 15;
     
-    [button setImage:[UIImage imageNamed:@"AssetsPickerChecked"]
+    [button setImage:[UIImage imageNamed:@"MSImagePickerController.bundle/AssetsPickerChecked"]
             forState:UIControlStateNormal];
     [v addSubview:button];
     
