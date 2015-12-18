@@ -3,10 +3,14 @@ MSImagePickerController
 A subclass of UIImagePickerController that support multi select. (一个支持多选的UIImagePickerController的子类)
 
 ## Example
-<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/demo.gif" width="315" height="565" />
+<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/demo.gif" width="220" height="395" />
 
 ## How it works
-<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/howitworks.png" width="580" height="463" />
+The PUCollectionView's superclass is UICollectionView, so i rest it's delegate and implemention the method
+```objc
+collectionView:shouldSelectItemAtIndexPath:
+```
+<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/howitworks.png" width="406" height="324" />
 
 ## Installation
 
