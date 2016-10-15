@@ -2,8 +2,8 @@
 //  main.m
 //  Example
 //
-//  Created by DamonDing on 15/12/17.
-//  Copyright (c) 2015年 morenotepad. All rights reserved.
+//  Created by zhang xiuming on 2016/10/15.
+//  Copyright © 2016年 morenotepad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
