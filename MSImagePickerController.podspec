@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "MSImagePickerController"
-  s.version       = "v1.0.0"
+  s.version       = "1.0.0"
   s.summary       = "A subclass of UIImagePickerController that support multi image select."
   s.homepage      = "https://github.com/roshanman/MSImagePickerController"
   s.license       = { :type => 'MIT', :file => 'LICENSE' }
