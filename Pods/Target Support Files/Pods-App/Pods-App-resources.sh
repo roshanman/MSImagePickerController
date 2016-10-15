@@ -80,14 +80,14 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "../../Pod/Assets/MSImagePickerController.bundle/AssetsPickerChecked@2x.png"
-  install_resource "../../Pod/Assets/MSImagePickerController.bundle/AssetsPickerChecked@3x.png"
-  install_resource "../../Pod/Assets/MSImagePickerController.bundle"
+  install_resource "../Pod/Assets/MSImagePickerController.bundle/AssetsPickerChecked@2x.png"
+  install_resource "../Pod/Assets/MSImagePickerController.bundle/AssetsPickerChecked@3x.png"
+  install_resource "../Pod/Assets/MSImagePickerController.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "../../Pod/Assets/MSImagePickerController.bundle/AssetsPickerChecked@2x.png"
-  install_resource "../../Pod/Assets/MSImagePickerController.bundle/AssetsPickerChecked@3x.png"
-  install_resource "../../Pod/Assets/MSImagePickerController.bundle"
+  install_resource "../Pod/Assets/MSImagePickerController.bundle/AssetsPickerChecked@2x.png"
+  install_resource "../Pod/Assets/MSImagePickerController.bundle/AssetsPickerChecked@3x.png"
+  install_resource "../Pod/Assets/MSImagePickerController.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

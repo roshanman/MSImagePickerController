@@ -6,5 +6,5 @@ target 'App' do
   # use_frameworks!
 
   # Pods for Example
-  pod "MSImagePickerController", :path => "../"
+  pod "MSImagePickerController", :path => "./"
 end
