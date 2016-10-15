@@ -1,0 +1,16 @@
+PODS:
+  - MSImagePickerController (1.0.0)
+
+DEPENDENCIES:
+  - MSImagePickerController (from `../`)
+
+EXTERNAL SOURCES:
+  MSImagePickerController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MSImagePickerController: b93198452043eea0e42aa542463eff4f05f99104
+
+PODFILE CHECKSUM: 642f169502b2f773c0fcb4200171b0c813405874
+
+COCOAPODS: 1.1.0.beta.2
