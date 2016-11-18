@@ -15,7 +15,7 @@ collectionView:shouldSelectItemAtIndexPath:
 ## Installation
 
 ```ruby
-pod 'MSImagePickerController', :git => 'https://github.com/Jameson-zxm/MSImagePickerController.git'
+pod 'MSImagePickerController', :git => 'https://github.com/roshanman/MSImagePickerController.git'
 ```
 
 ### Import
