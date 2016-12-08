@@ -2,7 +2,7 @@
 //  MSImagePickerController.h
 //  Example
 //
-//  Created by DamonDing on 17/12/14.
+//  Created by morenotepad on 17/12/14.
 //  Copyright (c) 2015年 zxm. All rights reserved.
 //
 
@@ -15,49 +15,14 @@ static char attachSelfKey;
 {
 }
 
-/**
- * 保存了所有的图片，内部使用。
- */
 @property (nonatomic, readwrite, retain) NSMutableArray *allImages;
-
-/**
- * 展示图片用的view，基类是UICollectionView
- */
 @property (nonatomic, readonly, retain) Class PUCollectionView;
-
-/**
- * 显示图片用的View。
- */
 @property (nonatomic, readonly, retain) Class PUPhotoView;
-
-/**
- * 确定按钮。
- */
 @property (retain, nonatomic) UIBarButtonItem *doneButton;
-
-/**
- * 原始的按钮。
- */
 @property (retain, nonatomic) UIBarButtonItem *lastDoneButton;
-
-/**
- * 当前选择的图片的indexPath
- */
 @property (retain, nonatomic) NSIndexPath     *curIndexPath;
-
-/**
- * 所有被选择图片的indexpath
- */
 @property (retain, nonatomic) NSMutableArray  *indexPaths;
-
-/**
- * 原始的PUCollectionView的代理对象
- */
 @property (retain, nonatomic) id              lastDelegate;
-
-/**
- * 当前显示的PUCollectionView
- */
 @property (nonatomic, readwrite, weak) UICollectionView *collectionView;
 
 @end
@@ -80,12 +45,12 @@ static char attachSelfKey;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         // PUCollectionView代理对象的共同基类(PUPhotosGridViewController)。
-        [self doMagicOperation:@"PUPhotosGridViewController"];
+        [self doMagicOperation];
     });
 }
 
-- (void) doMagicOperation:(NSString*) className {
-    Class targetClass = [NSClassFromString(className) class];
+- (void) doMagicOperation {
+    Class targetClass = [NSClassFromString(@"PUPhotosGridViewController") class];
     
     Method m1 = class_getInstanceMethod([self class], @selector(override_collectionView:cellForItemAtIndexPath:));
     
@@ -129,8 +94,8 @@ static char attachSelfKey;
 }
 
 - (void)done:(id)sender {
-    if ([self.msDelegate respondsToSelector:@selector(imagePickerControllerdidFinish:)]) {
-        [self.msDelegate imagePickerControllerdidFinish:self];
+    if ([self.msDelegate respondsToSelector:@selector(imagePickerControllerDidFinish:)]) {
+        [self.msDelegate imagePickerControllerDidFinish:self];
     }
 }
 
@@ -170,11 +135,13 @@ static char attachSelfKey;
     [button setTranslatesAutoresizingMaskIntoConstraints:false];
     
     NSArray* cs1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[button(30)]-1-|"
-                                                           options:0 metrics:nil
+                                                           options:0
+                                                           metrics:nil
                                                              views:NSDictionaryOfVariableBindings(button)];
     
     NSArray* cs2 = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[button(30)]-1-|"
-                                                           options:0 metrics:nil
+                                                           options:0
+                                                           metrics:nil
                                                              views:NSDictionaryOfVariableBindings(button)];
     
     [v addConstraints:cs1];
@@ -195,8 +162,7 @@ static char attachSelfKey;
 - (void) removeIndicatorButton:(UIView*)v {
     for (UIView* b in v.subviews) {
         if ([b isKindOfClass:[UIButton class]]) {
-            [b removeFromSuperview];
-            return;
+            [b removeFromSuperview]; return;
         }
     }
 }
@@ -325,7 +291,7 @@ static char attachSelfKey;
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated; {
     UIView *collection = [self getPUCollectionView:viewController.view];
     
-    // 有可能改变确定按钮，需要禁用。I will fix it later.
+    // 有可能改变确定按钮，需要禁用。
     self.interactivePopGestureRecognizer.enabled = NO;
     
     // 进入的不是图片展示画面
@@ -348,9 +314,11 @@ static char attachSelfKey;
 }
 
 #pragma mark - UIImagePikcerControllerDelegate method
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo; {
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info;
+ {
     NSInteger idx = [self isCurIndexInIndexPaths];
-    
+    UIImage* image = info[UIImagePickerControllerOriginalImage];
+     
     if (idx == NSNotFound) {
         if ([self.msDelegate respondsToSelector:@selector(imagePickerController:shouldSelectImage:)]) {
             if ([self.msDelegate imagePickerController:self shouldSelectImage:image]) {
@@ -365,10 +333,14 @@ static char attachSelfKey;
         [self removeCurrentImage];
     }
     
-    if (self.images.count == 1) {// 选择第一张图片的时候改变按钮
-        picker.topViewController.navigationItem.rightBarButtonItem = self.doneButton;
-    } else if (self.images.count == 0) {
-        picker.topViewController.navigationItem.rightBarButtonItem = self.lastDoneButton;
+    if (self.images.count != 0) {// 选择第一张图片的时候改变按钮
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 100000000), dispatch_get_main_queue(), ^{
+            picker.topViewController.navigationItem.rightBarButtonItem = self.doneButton;
+        });
+    } else {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 100000000), dispatch_get_main_queue(), ^{
+            picker.topViewController.navigationItem.rightBarButtonItem = self.lastDoneButton;
+        });
     }
 }
 
@@ -382,6 +354,10 @@ static char attachSelfKey;
 - (void)dealloc
 {
     self.lastDelegate = nil;
+    
+#if DEBUG
+    NSLog(@"MSImagePickerController dealloc");
+#endif
 }
 
 @end
