@@ -1,21 +1,26 @@
-MSImagePickerController
+# MSImagePickerController
+
+[![CocoaPods](https://img.shields.io/cocoapods/v/MSImagePickerController.svg)](https://github.com/roshanman/MSImagePickerController/)
+[![License](https://img.shields.io/cocoapods/l/MSImagePickerController.svg?style=flat)](http://cocoapods.org/pods/MSImagePickerController)
+[![Platform](https://img.shields.io/cocoapods/p/MSImagePickerController.svg?style=flat)](http://cocoapods.org/pods/MSImagePickerController)
+
 =================
 A subclass of UIImagePickerController that support multi select. (一个支持多选的UIImagePickerController的子类)
 
 ## Example
-<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/demo.gif" width="220" height="395" />
+<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/Screenshots/demo.gif" width="220" height="395" />
 
 ## How it works
 The PUCollectionView's superclass is UICollectionView, so i rest it's delegate and implemention the method
 ```objc
 collectionView:shouldSelectItemAtIndexPath:
 ```
-<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/howitworks.png" width="406" height="324" />
+<img src="https://github.com/Jameson-zxm/MSImagePickerController/blob/master/Screenshots/howitworks.png" width="406" height="324" />
 
 ## Installation
 
 ```ruby
-pod 'MSImagePickerController', :git => 'https://github.com/roshanman/MSImagePickerController.git'
+pod 'MSImagePickerController'
 ```
 
 ### Import
