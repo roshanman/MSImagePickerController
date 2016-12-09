@@ -1,4 +1,9 @@
 MSImagePickerController
+
+[![CocoaPods](https://img.shields.io/cocoapods/v/MSImagePickerController.svg)](https://github.com/roshanman/MSImagePickerController/)
+[![License](https://img.shields.io/cocoapods/l/MSImagePickerController.svg?style=flat)](http://cocoapods.org/pods/MSImagePickerController)
+[![Platform](https://img.shields.io/cocoapods/p/MSImagePickerController.svg?style=flat)](http://cocoapods.org/pods/MSImagePickerController)
+
 =================
 A subclass of UIImagePickerController that support multi select. (一个支持多选的UIImagePickerController的子类)
 
@@ -15,7 +20,7 @@ collectionView:shouldSelectItemAtIndexPath:
 ## Installation
 
 ```ruby
-pod 'MSImagePickerController', :git => 'https://github.com/roshanman/MSImagePickerController.git'
+pod 'MSImagePickerController'
 ```
 
 ### Import
