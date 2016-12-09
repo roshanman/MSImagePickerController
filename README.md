@@ -1,4 +1,4 @@
-MSImagePickerController
+# MSImagePickerController
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/MSImagePickerController.svg)](https://github.com/roshanman/MSImagePickerController/)
 [![License](https://img.shields.io/cocoapods/l/MSImagePickerController.svg?style=flat)](http://cocoapods.org/pods/MSImagePickerController)
